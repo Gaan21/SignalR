@@ -1,4 +1,4 @@
-namespace SignalR
+namespace ServidorApi
 {
     public class WeatherForecast
     {
