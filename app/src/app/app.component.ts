@@ -8,10 +8,14 @@ import { Coche } from './api/models';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public title: string = "Mi título";
 
-  public constructor(private api: CocheService)
-  {
+  public coche: Coche;
 
+  public constructor(private api: CocheService) {
+    this.coche = {};
+    this.api.apiCocheGet$Json({ id: 2 }).subscribe(res => {
+      this.coche = res;
+    })
   }
 }
